@@ -1,11 +1,9 @@
 .Burger {
-
-    width: 40%;
-    margin: auto;
-    margin-top: 150px;
-    height: 550px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2erm;
-
+  width: 380px;
+  margin: auto;
+  margin-top: 90px;
+  height: 320px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2erm;
 }

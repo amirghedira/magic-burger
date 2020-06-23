@@ -11,20 +11,20 @@
     padding: 0 20px;
     box-sizing: border-box;
     z-index: 90;
-  }
-  
-  .Toolbar nav {
-    height: 100%;
-  }
+}
 
-  .Logo {
+.Toolbar nav {
+    height: 100%;
+}
+
+.Logo {
     background-color: white;
     padding: 8px;
     height: 80%;
     box-sizing: border-box;
     border-radius: 5px;
-  }
-  
-  .Logo img {
+}
+
+.Logo img {
     height: 100%;
-  }
+}

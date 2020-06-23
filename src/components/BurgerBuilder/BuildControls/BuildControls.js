@@ -2,21 +2,29 @@ import React from 'react'
 import classes from './BuildControls.module.css'
 import BuildControl from './BuildControl/BuildControl'
 
-const BuildControls = (props) => {
-    let components = props.ingredients.map((ingredient) => {
+const buildControls = (props) => {
 
-        return <BuildControl key={ingredient.label + ingredient.count}
-            status={(ingredient.count > 0) ? false : true}
-            label={ingredient.label}
-            lessFct={() => { props.lessMoreAction(ingredient.id, "remove") }}
-            moreFct={() => { props.lessMoreAction(ingredient.id, "add") }} />
-    })
+    let ingredientsControl = []
+
+    for (let item of props.ingredients) {
+        ingredientsControl.push(
+            <BuildControl
+                key={item._id}
+                label={item.label}
+                addIngredient={() => { props.addIngredient(item._id) }}
+                removeIngredient={() => { props.removeIngredient(item._id) }}
+                disableRemoving={item.count === 0} />
+        )
+    }
+
+
     return (
         <div className={classes.BuildControls}>
-            <p>Current price: {props.price} </p>
-            {components}
-            <button className={classes.OrderButton}>Order Now</button>
+            <p>Current Price : {props.totalPrice.toFixed(2)} DT</p>
+            {ingredientsControl}
+            <button className={classes.OrderButton} onClick={props.showOrHideModal}>Order Now</button>
         </div>
     )
 }
-export default BuildControls
+
+export default buildControls

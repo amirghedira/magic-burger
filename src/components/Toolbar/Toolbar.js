@@ -11,6 +11,7 @@ const Toolbar = () => {
             <div className={classes.Logo}>
                 <img src={LogoImage} alt="Burger Magic" />
             </div>
+
             <NavigationItem />
         </div>
     )

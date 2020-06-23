@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './NavigationItem.module.css'
-
+import { NavLink } from 'react-router-dom'
 // const setActive = (props) => {
 
 //   console.log(props.active);
@@ -12,13 +12,13 @@ import classes from './NavigationItem.module.css'
 // }
 
 const navigationItem = (props) => {
-  return (
-    <li className={classes.NavigationItem}>
-      <a href="/" className={props.active ? classes.active : null}>
-        {props.children}
-      </a>
-    </li>
-  )
+    return (
+        <li className={classes.NavigationItem}>
+            <NavLink to={props.link} className={props.active ? classes.active : null} onClick={props.activateFunction}>
+                {props.children}
+            </NavLink>
+        </li>
+    )
 }
 
 export default navigationItem
