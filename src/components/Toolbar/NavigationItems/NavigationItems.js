@@ -9,7 +9,6 @@ const NavigationItems = () => {
     const [activeCheckOut, setActiveCheckOut] = React.useState(false)
 
     React.useEffect(() => {
-        console.log(window.location.href.split('/'))
         if (window.location.href.split('/')[3] === 'orders') {
             setActiveCheckOut(true);
             setActiveBuilder(false);

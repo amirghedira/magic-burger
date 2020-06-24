@@ -99,8 +99,6 @@ class BurgerBuilder extends Component {
                     })
             })
             .catch((error) => {
-                console.log(error);
-
                 this.setState({
                     errorMessage: 'Somthing went wrong: ' + error.message
                 })
@@ -124,7 +122,6 @@ class BurgerBuilder extends Component {
                 })
             })
             .catch((error) => {
-                console.log(error);
                 this.setState({
                     errorMessage: 'Somthing went wrong: ' + error.message
                 })
