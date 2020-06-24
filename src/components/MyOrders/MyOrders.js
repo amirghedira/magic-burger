@@ -12,9 +12,11 @@ class Authentication extends Component {
 
     componentDidMount = () => {
 
+        document.title = 'Check out'
+
         axios.get('http://localhost:5000/order')
             .then((response) => {
-                console.log(response);
+                console.log(response.data.orders);
 
                 this.setState({
                     orders: response.data.orders
@@ -32,7 +34,7 @@ class Authentication extends Component {
         const columns = [
             {
                 title: 'Id',
-                dataIndex: 'id',
+                dataIndex: '_id',
                 sorter: (a, b) => a.id - b.id
             },
             {
@@ -46,7 +48,7 @@ class Authentication extends Component {
             },
             {
                 title: 'Cheese',
-                dataIndex: 'cheese',
+                dataIndex: 'chesse',
                 sorter: (a, b) => a.cheese - b.cheese
             },
             {

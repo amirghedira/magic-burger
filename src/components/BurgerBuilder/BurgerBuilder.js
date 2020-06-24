@@ -5,7 +5,6 @@ import Modal from './Modal/Modal'
 import OrderSummary from './OrderSummary/OrderSummary'
 import axios from 'axios'
 import loadingGif from '../../assets/images/loading.gif'
-import ingredient from './Burger/Ingredient/Ingredient'
 
 class BurgerBuilder extends Component {
 
@@ -61,6 +60,22 @@ class BurgerBuilder extends Component {
         })
     }
 
+    resetBurgerHandler = () => {
+        axios.patch('http://localhost:5000/ingredients')
+            .then(result => {
+                const newIngredients = this.state.ingredients.map(ingredient => {
+                    ingredient.count = 0;
+                    return ingredient
+                })
+                this.setState({
+                    ingredients: newIngredients
+                })
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
     sendOrderHandler = () => {
         this.setState({
             isLoading: true
@@ -70,11 +85,18 @@ class BurgerBuilder extends Component {
             ingredients: this.state.ingredients
         })
             .then((response) => {
-                this.setState({
-                    showModal: false,
-                    isLoading: false
-                })
-
+                axios.post('http://localhost:5000/ingredients', { ingredients: this.state.ingredients })
+                    .then(result => {
+                        this.setState({
+                            showModal: false,
+                            isLoading: false
+                        })
+                    })
+                    .catch(error => {
+                        this.setState({
+                            errorMessage: 'Somthing went wrong: ' + error.message
+                        })
+                    })
             })
             .catch((error) => {
                 console.log(error);
@@ -87,11 +109,11 @@ class BurgerBuilder extends Component {
 
     componentDidMount = () => {
 
-
+        document.title = 'Magic Burger'
         axios.get('http://localhost:5000/ingredients')
             .then((response) => {
                 let totalprice = 4.0;
-                response.data.ingredients.map(ingredient => {
+                response.data.ingredients.forEach(ingredient => {
                     totalprice += ingredient.price * ingredient.count
                 })
                 this.setState({
@@ -147,6 +169,7 @@ class BurgerBuilder extends Component {
                     ingredients={this.state.ingredients}
                     addIngredient={this.addIngredientHandler}
                     removeIngredient={this.removeIngredientHandler}
+                    resetBurger={this.resetBurgerHandler}
                     totalPrice={this.state.totalPrice}
                     showOrHideModal={this.showOrHideModalHandler}
                 />

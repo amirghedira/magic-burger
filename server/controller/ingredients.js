@@ -28,7 +28,25 @@ exports.saveIngredients = async (req, res) => {
             updateIngredient(ingredient)
 
         })
-        res.status(200).json({ message: 'done' })
+        res.status(200).json({ message: 'ingredients saved successfully' })
+
+
+    } catch (error) {
+        res.status(500).json({ error: error.message })
+    }
+
+}
+
+exports.resetIngredients = async (req, res) => {
+
+    updateIngredient = async (ingredient) => {
+
+        await Ingredients.updateOne({ _id: ingredient._id }, { $set: { count: 0 } })
+    }
+    try {
+
+        await Ingredients.updateMany({}, { $set: { count: 0 } })
+        res.status(200).json({ message: 'ingredients reset successfully' })
 
 
     } catch (error) {

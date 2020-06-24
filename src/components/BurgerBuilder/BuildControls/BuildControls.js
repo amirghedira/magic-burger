@@ -22,7 +22,10 @@ const buildControls = (props) => {
         <div className={classes.BuildControls}>
             <p>Current Price : {props.totalPrice.toFixed(2)} DT</p>
             {ingredientsControl}
-            <button className={classes.OrderButton} onClick={props.showOrHideModal}>Order Now</button>
+            <div style={{ display: 'flex' }}>
+                <button className={classes.OrderButton} onClick={props.resetBurger}>Reset</button>
+                <button className={classes.OrderButton} onClick={props.showOrHideModal}>Order Now</button>
+            </div>
         </div>
     )
 }

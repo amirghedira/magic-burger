@@ -5,7 +5,7 @@ import LogoImage from '../../assets/images/logo.png'
 const Toolbar = () => {
     return (
         <div className={classes.Toolbar}>
-            <div>
+            <div style={{ color: 'white' }}>
                 Menu
             </div>
             <div className={classes.Logo}>
