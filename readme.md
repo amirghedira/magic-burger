@@ -8,36 +8,48 @@ Also building a RestAPI with MongoDB that saves the orders into the database and
 # Platform & Libraries 
 ## Frontend
 
+```json
+{
+        "antd": "^4.3.5",
+        "axios": "^0.19.2",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.0"
+}
+```
 
-
-Axios:
-Link: https://www.npmjs.com/package/axios
+[axios](https://www.npmjs.com/package/axios):
 This library is an alternative to fetch in javascript, it's easier to manipulate and easy to learn, and to use. Actually, the most liked feature that provides It, is the ability to make a base URL to HTTP requests, without repeating it each HTTP request.
 
-antd (ant Design):
-Link: https://www.npmjs.com/package/antd
+[antd (ant Design)](https://www.npmjs.com/package/antd):
 Is a React UI library that contains a set of high quality components and demos for building rich, interactive user interfaces.
 
 ## Backend
+``` json
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "mongoose": "^5.9.20"
+```
 
 
-
-Express:
+[Express](https://www.npmjs.com/package/express):
 Which is a framework of nodejs , which makes easier handling HTTP request and responses.
-Link: https://www.npmjs.com/package/express
 
 Mongoose:
 is a mongodb driver in nodejs that provides a straight-forward, schema-based solution to model your application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 You can also use mongodb driver (default) it will work too but with different syntax and methodologies
-Link: mongodb: https://www.npmjs.com/package/mongodb
-Link: mongoose:https://www.npmjs.com/package/mongoose
 
-body-parse:
+Link:mongodb:[https://www.npmjs.com/package/mongodb](https://www.npmjs.com/package/mongodb)
+
+Link: mongoose:[https://www.npmjs.com/package/mongoose](https://www.npmjs.com/package/mongoose)
+
+[body-parser](https://www.npmjs.com/package/body-parser):
 Is a library , that allow the backend to parse the body and get data from the request (you can't get data from req.body without this library)
-Link: https://www.npmjs.com/package/body-parser
 The other packages are optional, but they provide more functionality.
 
-cors:
+[cors](https://www.npmjs.com/package/cors):
 Is a library for Cross-Origin Resource Sharing. It is a mechanism to allow or restrict requested resources on a web server depend on where the HTTP request was initiated. This policy is used to secure a certain web server from access by other website or domain.
 
  
