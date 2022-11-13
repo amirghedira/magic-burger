@@ -5,6 +5,46 @@ The user has a dedicated page displaying the orders made.
  # Features / Technologies 
  The core feature of this application is data binding and making the UI is reactive to each ingredient added or removed.
 Also building a RestAPI with MongoDB that saves the orders into the database and fetches the ingredients. 
+
+
+# Launch the project
+## backend
+To launch the backend, you have to navigate into the server folder by running:
+```bash
+cd server
+``` 
+you have to first add a `.env` file in the directory that will hold the environment variables of the backend. You can find a `.env.example` folder as reference for the environment variables used.
+
+After adding a `.env` file, you have to install the NodeJS packages on the backend (the project holds both the frontend under the client folder and the backend in the root directory of the project)
+
+To install the backend Node packages simply run:
+``` bash
+npm install
+```
+To run the backend server run:
+``` bash
+npm start
+```
+To run the backend server in development mode run:
+``` bash
+npm run devStart
+```
+Note that the server will listen on port `5000`
+## frontend
+Navigate back to the root directory by running:
+``` bash
+cd ..
+```
+Then to install the frontend packages run:
+``` bash
+npm install
+```
+Now you are ready to start the frontend by running:
+``` bash
+npm start
+```
+Note that the frontend will be accessible on port `3000`
+
 # Platform & Libraries 
 ## Frontend
 
