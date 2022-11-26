@@ -1,6 +1,6 @@
 version: '3.3'
 services:
-  amir_platform_ui:
+  magic_burger_ui:
     restart: always
     image: magic_burger_ui:latest
     build:
