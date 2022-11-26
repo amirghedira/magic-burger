@@ -21,7 +21,7 @@ services:
     networks:
       - magic_burger
     env_file: 
-      - ./server/.env.example
+      - ./server/.env
     ports:
       - "5000:5000"
 
