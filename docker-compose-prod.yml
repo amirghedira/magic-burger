@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  magic_burger_ui_prod:
+    restart: always
+    container_name: magic_burger_ui_prod
+    image: ${REGISTRY_IMAGE}/${IMAGE_NAME}:${VERSION}
+    networks:
+      - magic_burger_prod
+    env_file: 
+      - .env
+    ports:
+      - "80:80"
+  magic_burger_api_prod:
+    restart: always
+    container_name: magic_burger_api_prod
+    image: ${REGISTRY_IMAGE}/${IMAGE_NAME}:${VERSION}
+    networks:
+      - magic_burger_prod
+    env_file: 
+      - .env
+    ports:
+      - "5000:5000"
+
+networks:
+  magic_burger_prod:
+    driver: bridge
+
+
+
+    

@@ -1,0 +1,30 @@
+version: '3.3'
+services:
+  magic_burger_ui:
+    restart: always
+    container_name: magic_burger_ui
+    image: magic_burger_ui:latest
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    networks:
+      - magic_burger
+    ports:
+      - "80:80"
+  magic_burger_api:
+    restart: always
+    container_name: magic_burger_api
+    image: magic_burger_api:latest
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    networks:
+      - magic_burger
+    env_file: 
+      - ./server/.env.example
+    ports:
+      - "5000:5000"
+
+networks:
+  magic_burger:
+    driver: bridge
